@@ -10,7 +10,7 @@ values:
   image:
     registry: docker.io
     repository: bitnami/mariadb
-    tag: ${IMAGE_VERSION}
+    tag: ${MARIADB_IMAGE_VERSION}
     pullPolicy: IfNotPresent
     pullSecrets: []
     debug: false

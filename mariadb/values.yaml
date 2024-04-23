@@ -1,7 +1,16 @@
-image:
-  registry: docker.io
-  repository: bitnami/mariadb
-  tag: ${IMAGE_VERSION}
-  pullPolicy: IfNotPresent
-  pullSecrets: []
-  debug: false
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: podinfo
+  namespace: bitnami/mariadb
+spec:
+  interval: 10m
+  url: https://charts.bitnami.com/bitnami
+values:
+  image:
+    registry: docker.io
+    repository: bitnami/mariadb
+    tag: ${IMAGE_VERSION}
+    pullPolicy: IfNotPresent
+    pullSecrets: []
+    debug: false

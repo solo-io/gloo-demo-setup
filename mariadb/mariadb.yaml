@@ -20,13 +20,13 @@ metadata:
 spec:
   interval: 5m
   chart:
+    version: 18.0.2
     spec:
       chart: bitnami/mariadb
       sourceRef:
         kind: HelmRepository
         name: bitnami
         namespace: mariadb
-        version: 18.0.2
       interval: 5m
   values:
     image:

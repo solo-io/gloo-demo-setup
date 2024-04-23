@@ -18,6 +18,7 @@ metadata:
   name: mariadb
   namespace: mariadb
 spec:
+  releaseName: mariadb
   interval: 5m
   chart:
     spec:

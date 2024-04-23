@@ -1,0 +1,16 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: bitnami/mariadb
+  namespace: mariadb
+spec:
+  interval: 5m
+  url: https://charts.bitnami.com/bitnami
+values:
+  image:
+    registry: docker.io
+    repository: bitnami/mariadb
+    tag: ${IMAGE_VERSION}
+    pullPolicy: IfNotPresent
+    pullSecrets: []
+    debug: false

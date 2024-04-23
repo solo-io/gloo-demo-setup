@@ -27,12 +27,12 @@ spec:
         name: bitnami
         namespace: mariadb
       interval: 5m
-      values:
-        image:
-          registry: docker.io
-          repository: bitnami/mariadb
-          tag: ${MARIADB_IMAGE_VERSION}
-          pullPolicy: IfNotPresent
-          pullSecrets: []
-          debug: false  
+  values:
+    image:
+      registry: docker.io
+      repository: bitnami/mariadb
+      tag: ${MARIADB_IMAGE_VERSION}
+      pullPolicy: IfNotPresent
+      pullSecrets: []
+      debug: false  
     

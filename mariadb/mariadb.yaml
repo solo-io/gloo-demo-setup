@@ -11,11 +11,11 @@ metadata:
 spec:
   interval: 5m
   url: https://charts.bitnami.com/bitnami
-values:
-  image:
-    registry: docker.io
-    repository: bitnami/mariadb
-    tag: ${MARIADB_IMAGE_VERSION}
-    pullPolicy: IfNotPresent
-    pullSecrets: []
-    debug: false
+  values:
+    image:
+      registry: docker.io
+      repository: bitnami/mariadb
+      tag: ${MARIADB_IMAGE_VERSION}
+      pullPolicy: IfNotPresent
+      pullSecrets: []
+      debug: false

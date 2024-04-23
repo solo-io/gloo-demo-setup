@@ -1,10 +1,15 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mariadb
+---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: podinfo
+  name: bitnami/mariadb
   namespace: mariadb
 spec:
-  interval: 10m
+  interval: 5m
   url: https://charts.bitnami.com/bitnami
 values:
   image:

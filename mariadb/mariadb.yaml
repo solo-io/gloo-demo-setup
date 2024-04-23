@@ -26,6 +26,7 @@ spec:
         kind: HelmRepository
         name: bitnami
         namespace: mariadb
+        version: 18.0.2
       interval: 5m
   values:
     image:

@@ -8,8 +8,8 @@ spec:
   interval: 10m0s
   sourceRef:
     kind: GitRepository
-    name: gloo-demo-system
-  path: ./apps/mariadb
+    name: gloo-demo-setup
+  path: ../apps/mariadb
   prune: true
   wait: true
   timeout: 5m0s

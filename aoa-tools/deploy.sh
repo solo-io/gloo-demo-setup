@@ -19,7 +19,7 @@ NO_COLOR='\033[0m'
 
 help() {
     # Display Help
-    echo "aoa-catalog installer."
+    echo "gloo-demo-setup installer."
     echo
     echo "Syntax: installer [-f|-i|-h|--colima]"
     echo

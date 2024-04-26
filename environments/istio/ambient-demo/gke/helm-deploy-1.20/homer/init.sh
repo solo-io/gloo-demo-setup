@@ -118,7 +118,7 @@ spec:
                 # Homepage configuration
                 # See https://fontawesome.com/v5/search for icons options
                 
-                title: "aoa-catalog demo dashboard"
+                title: "gloo-demo-setup demo dashboard"
                 subtitle: "Homepage"
                 logo: "solo/glooy.png"
                 # icon: "fas fa-skull-crossbones" # Optional icon
@@ -163,14 +163,14 @@ spec:
                   style: "is-dark" # See https://bulma.io/documentation/components/message/#colors for styling options.
                   title: "Welcome!"
                   icon: "fa fa-grin"
-                  content: "This is a simple navigation homepage for aoa-catalog demo apps running on Istio!<br /> Find more information on <a href='https://github.com/solo-io/aoa-catalog'>github.com/solo-io/aoa-catalog</a><br /><br />More information in the README <a href='https://github.com/solo-io/aoa-catalog/tree/main/environments/gloo-platform/multicluster-onlineboutique/mgmt/#application-description'>here</a>"
+                  content: "This is a simple navigation homepage for gloo-demo-setup demo apps running on Istio!<br /> Find more information on <a href='https://github.com/solo-io/gloo-demo-setup'>github.com/solo-io/gloo-demo-setup</a><br /><br />More information in the README <a href='https://github.com/solo-io/gloo-demo-setup/tree/main/environments/gloo-platform/multicluster-onlineboutique/mgmt/#application-description'>here</a>"
                 
                 # Optional navbar
                 # links: [] # Allows for navbar (dark mode, layout, and search) without any links
                 links:
                   - name: "Github Repo"
                     icon: "fab fa-github"
-                    url: "https://github.com/solo-io/aoa-catalog"
+                    url: "https://github.com/solo-io/gloo-demo-setup"
                     target: "_blank" # optional html a tag target attribute
                   - name: "Gloo Mesh Documentation"
                     icon: "fas fa-book"

@@ -27,7 +27,7 @@ parent_app_sync=${7:-""}
 prompt_user_input wave_name "Please provide the wave name " ""
 prompt_user_input cluster_context "Please provide the cluster context to use (i.e. mgmt, cluster1, cluster2)" ""
 prompt_user_input github_username "Please provide the GitHub username to use (i.e. solo-io)" ""
-prompt_user_input repo_name "Please provide the repo name to use (i.e. aoa-catalog)" ""
+prompt_user_input repo_name "Please provide the repo name to use (i.e. gloo-demo-setup)" ""
 prompt_user_input target_branch "Please provide the target branch to use (i.e. HEAD)" ""
 prompt_user_input parent_app_sync "Please provide the parent_app_sync to use (true/false)" ""
 

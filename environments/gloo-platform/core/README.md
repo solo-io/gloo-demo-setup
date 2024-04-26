@@ -5,7 +5,7 @@
 ### Deploy Demo site to EKS
 - Setup [test env](https://github.com/solo-io/gloo-eng-test-beds/actions/workflows/build-eng-cicd-env.yaml) with 2 remote clusters (this'll take ~15 mins).
 
-- Clone [aoa-catalog](https://github.com/solo-io/aoa-catalog) repo & checkout branch **gp-release-demo**
+- Clone [gloo-demo-setup](https://github.com/solo-io/gloo-demo-setup) repo & checkout branch **gp-release-demo**
 - Now checkout a new branch off of **gp-release-demo** for the release, e.g. gp-release-demo-v2.5.x
 - Run below cmds to update docker repo and tag version
 ```

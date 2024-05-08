@@ -1,5 +1,5 @@
 # Environment Description
-The `gloo-platform/core/cluster1` environment deploys the `cluster1` worker for a multi-cluster Gloo Platform demo, which deploys Istio with ingress gateways and configures the Gloo Mesh Agent to communicate with the Gloo Mesh Control Plane served by the `gloo-platform/core/mgmt` environment
+The `gloo-platform/smoke-test/cluster1` environment deploys the `cluster1` worker for a multi-cluster Gloo Platform demo, which deploys Istio with ingress gateways and configures the Gloo Mesh Agent to communicate with the Gloo Mesh Control Plane served by the `gloo-platform/smoke-test/mgmt` environment
 
 ![High Level Architecture](.images/gloo-platform-core-cluster1-arch-1a.png)
 

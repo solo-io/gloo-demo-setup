@@ -1,6 +1,6 @@
 
 waves:
-  # core 
+  # smoke-test 
   - name: clusterconfig
     location: $env_path/clusterconfig/base
     scripts:

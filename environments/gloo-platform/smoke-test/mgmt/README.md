@@ -1,5 +1,5 @@
 # Environment Description
-The `gloo-platform/core/mgmt` environment deploys the mgmt cluster control plane for a multi-cluster Gloo Platform demo, with Istio exposing admin applications on the cluster. This environment can be used in conjunction with `gloo-platform/core/cluster1` and `gloo-platform/core/cluster2` to demonstrate cluster onboarding, secure cross-cluster communication, failover, and other mesh-focused use cases
+The `gloo-platform/smoke-test/mgmt` environment deploys the mgmt cluster control plane for a multi-cluster Gloo Platform demo, with Istio exposing admin applications on the cluster. This environment can be used in conjunction with `gloo-platform/smoke-test/cluster1` and `gloo-platform/smoke-test/cluster2` to demonstrate cluster onboarding, secure cross-cluster communication, failover, and other mesh-focused use cases
 
 ### What this deploys
 When applied alone, the control plane is deployed and configured with just the `ops-team` workspace.

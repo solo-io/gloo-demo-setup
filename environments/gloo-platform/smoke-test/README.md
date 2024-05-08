@@ -17,7 +17,7 @@ grep -rl DOCKER_REPO ./environments/gloo-platform | xargs sed -i '' "s|DOCKER_RE
 grep -rl HELM_REPO ./environments/gloo-platform | xargs sed -i '' "s|HELM_REPO|$HELM_REPO|g"
 grep -rl GME_TARGET_REVISION ./environments/gloo-platform | xargs sed -i '' "s/GME_TARGET_REVISION/$GME_TARGET_REVISION/g"
 
-git checkout environments/gloo-platform/core/README.md
+git checkout environments/gloo-platform/smoke-test/README.md
 ```
 > NOTE: where GME_TARGET_REVISION is the GME dev build version without the 'v', e.g. 2.4.14-2024-04-11-v2.4.x-86a42ac5f4
 
@@ -34,13 +34,13 @@ kubectl config rename-context cluster-1 cluster1
 kubectl config rename-context cluster-2 cluster2
 
 kubectl config use-context mgmt
-./aoa-tools/deploy.sh deploy -f environments/gloo-platform/core/mgmt
+./aoa-tools/deploy.sh deploy -f environments/gloo-platform/smoke-test/mgmt
 
 kubectl config use-context cluster1
-./aoa-tools/deploy.sh deploy -f environments/gloo-platform/core/cluster1
+./aoa-tools/deploy.sh deploy -f environments/gloo-platform/smoke-test/cluster1
 
 kubectl config use-context cluster2
-./aoa-tools/deploy.sh deploy -f environments/gloo-platform/core/cluster2
+./aoa-tools/deploy.sh deploy -f environments/gloo-platform/smoke-test/cluster2
 ```
 - Once test bed clusters are setup, you can visualize demo site UI
 ```

@@ -19,6 +19,7 @@ spec:
             addonNamespace: "gloo-mesh-addons"
             adminNamespace: "gloo-mesh"
             cluster: mgmt
+            verbose: true
         glooInsightsEngine:
             enabled: false
         global: {}

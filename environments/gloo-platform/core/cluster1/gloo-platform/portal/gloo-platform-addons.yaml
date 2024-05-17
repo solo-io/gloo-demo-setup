@@ -18,6 +18,7 @@ spec:
         common:
             addonNamespace: "gloo-mesh-addons"
             cluster: cluster1
+            verbose: true
         extAuthService:
             enabled: true
             extAuth:

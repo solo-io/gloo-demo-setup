@@ -60,6 +60,7 @@ spec:
             addonNamespace: "gloo-mesh-addons"
             adminNamespace: "gloo-mesh"
             cluster: ${cluster_context}
+            verbose: true
         global: {}
         glooAgent:
             enabled: true
@@ -109,6 +110,7 @@ spec:
             addonNamespace: "gloo-mesh-addons"
             adminNamespace: "gloo-mesh"
             cluster: ${cluster_context}
+            verbose: true
         telemetryCollector:
             enabled: true
             # uncomment to use deployment mode instead of daemonset

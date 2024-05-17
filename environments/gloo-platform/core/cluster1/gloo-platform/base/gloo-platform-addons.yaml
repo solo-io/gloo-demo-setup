@@ -28,8 +28,8 @@ spec:
             rateLimiter:
                 image:
                     registry: gcr.io/gloo-mesh
-    repoURL: HELM_REPO
-    targetRevision: GME_TARGET_REVISION
+    repoURL: $HELM_REPO
+    targetRevision: $GME_TARGET_REVISION
   syncPolicy:
     automated:
       prune: true

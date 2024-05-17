@@ -15,13 +15,13 @@ spec:
   source:
     chart: gateway
     repoURL: https://istio-release.storage.googleapis.com/charts
-    targetRevision: ISTIO_TARGET_REVISION
+    targetRevision: $ISTIO_TARGET_REVISION
     helm:
       values: |
         # Name allows overriding the release name. Generally this should not be set
-        name: "istio-ingressgateway-ISTIO_TAG_REVISION"
+        name: "istio-ingressgateway-$ISTIO_TAG_REVISION"
         # revision declares which revision this gateway is a part of
-        revision: "ISTIO_TAG_REVISION"
+        revision: "$ISTIO_TAG_REVISION"
         
         replicaCount: 1
         
@@ -49,7 +49,7 @@ spec:
         
         # Labels to apply to all resources
         labels:
-          istio.io/rev: ISTIO_TAG_REVISION
+          istio.io/rev: $ISTIO_TAG_REVISION
           istio: mgmt-ingressgateway
   syncPolicy:
     automated: {}

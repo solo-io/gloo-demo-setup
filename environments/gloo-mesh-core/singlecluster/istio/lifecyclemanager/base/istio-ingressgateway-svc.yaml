@@ -26,5 +26,5 @@ spec:
   selector:
     app: istio-ingressgateway
     istio: ingressgateway
-    revision: 1-20
+    revision: $ISTIO_TAG_REVISION
   type: LoadBalancer

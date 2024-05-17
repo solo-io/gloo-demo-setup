@@ -10,9 +10,9 @@ The `gloo-mesh-core/additional-cluster-2` environment bootstraps an additional w
 ## Environment descriptions
 - base:
     - gloo mesh 2.5.0
-    - istio 1.20.2-solo (Helm)
-    - revision: 1-20
+    - istio $ISTIO_TARGET_REVISION-solo (Helm)
+    - revision: $ISTIO_TAG_REVISION
 - lifecyclemanager:
     - gloo mesh 2.5.0
-    - istio 1.20.2-solo (ILM)
-    - revision: 1-20
+    - istio $ISTIO_TARGET_REVISION-solo (ILM)
+    - revision: $ISTIO_TAG_REVISION

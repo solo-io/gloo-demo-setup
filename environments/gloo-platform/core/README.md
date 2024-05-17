@@ -13,13 +13,13 @@ export GME_TARGET_REVISION=2.4.14-2024-04-11-v2.4.x-86a42ac5f4
 export DOCKER_REPO=us-docker.pkg.dev/developers-369321/gloo-platform-dev
 export HELM_REPO=https://storage.googleapis.com/gloo-platform-dev/platform-charts/helm-charts
 
-grep -rl DOCKER_REPO ./environments/gloo-platform | xargs sed -i '' "s|DOCKER_REPO|$DOCKER_REPO|g"
-grep -rl HELM_REPO ./environments/gloo-platform | xargs sed -i '' "s|HELM_REPO|$HELM_REPO|g"
-grep -rl GME_TARGET_REVISION ./environments/gloo-platform | xargs sed -i '' "s/GME_TARGET_REVISION/$GME_TARGET_REVISION/g"
+grep -rl '$DOCKER_REPO' ./environments/gloo-platform | xargs sed -i '' "s|\$DOCKER_REPO|$DOCKER_REPO|g"
+grep -rl '$HELM_REPO' ./environments/gloo-platform | xargs sed -i '' "s|\$HELM_REPO|$HELM_REPO|g"
+grep -rl '$GME_TARGET_REVISION' ./environments/gloo-platform | xargs sed -i '' "s/\$GME_TARGET_REVISION/$GME_TARGET_REVISION/g"
 
 git checkout environments/gloo-platform/core/README.md
 ```
-> NOTE: where GME_TARGET_REVISION is the GME dev build version without the 'v', e.g. 2.4.14-2024-04-11-v2.4.x-86a42ac5f4
+> NOTE: where $GME_TARGET_REVISION is the GME dev build version without the 'v', e.g. 2.4.14-2024-04-11-v2.4.x-86a42ac5f4
 
 - Commit changes and push new branch
 

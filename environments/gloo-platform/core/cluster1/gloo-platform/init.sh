@@ -7,7 +7,7 @@ echo "deploy and register gloo-mesh agent and addons"
 if [[ ${gloo_mesh_version} == "" ]]
   then
     # provide gloo_mesh_version variable
-    echo "Please provide the gloo_mesh_version to use (i.e. GME_TARGET_REVISION):"
+    echo "Please provide the gloo_mesh_version to use (i.e. $GME_TARGET_REVISION):"
     read gloo_mesh_version
 fi
 
@@ -74,8 +74,8 @@ spec:
                   name: null
                   namespace: null
                   
-    repoURL: HELM_REPO
-    targetRevision: GME_TARGET_REVISION
+    repoURL: $HELM_REPO
+    targetRevision: $GME_TARGET_REVISION
   syncPolicy:
     automated:
       prune: true
@@ -117,13 +117,13 @@ spec:
             #service: 
             #  type: ClusterIP
             #podLabels:
-            #  istio.io/rev: ISTIO_TAG_REVISION
+            #  istio.io/rev: $ISTIO_TAG_REVISION
             #podAnnotations:
             #  proxy.istio.io/config: '{ "holdApplicationUntilProxyStarts": true }'
             image:
               pullPolicy: IfNotPresent
-              repository: DOCKER_REPO/gloo-otel-collector
-              tag: GME_TARGET_REVISION
+              repository: $DOCKER_REPO/gloo-otel-collector
+              tag: $GME_TARGET_REVISION
             config:
                 exporters:
                     otlp:
@@ -144,8 +144,8 @@ spec:
                       type: DirectoryOrCreate
                   name: cilium-run
                   
-    repoURL: HELM_REPO
-    targetRevision: GME_TARGET_REVISION
+    repoURL: $HELM_REPO
+    targetRevision: $GME_TARGET_REVISION
   syncPolicy:
     automated:
       prune: true

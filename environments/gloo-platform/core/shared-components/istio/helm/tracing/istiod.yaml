@@ -15,17 +15,17 @@ spec:
   source:
     chart: istiod
     repoURL: https://istio-release.storage.googleapis.com/charts
-    targetRevision: ISTIO_TARGET_REVISION
+    targetRevision: $ISTIO_TARGET_REVISION
     helm:
       values: |
-        revision: ISTIO_TAG_REVISION
+        revision: $ISTIO_TAG_REVISION
         global:
           meshID: mesh1
           multiCluster:
             clusterName: cluster1
           network: network1
-          hub: us-docker.pkg.dev/gloo-mesh/istio-workshops
-          tag: ISTIO_TARGET_REVISION-solo
+          hub: us-docker.pkg.dev/gloo-mesh/$ISTIO_HUB
+          tag: $ISTIO_TARGET_REVISION-solo
         meshConfig:
           enableTracing: true
           extensionProviders:

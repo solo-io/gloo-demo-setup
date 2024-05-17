@@ -10,13 +10,13 @@ The `gloo-platform/core/cluster1` environment deploys the `cluster1` worker for 
 
 ## Environment description
 - base:
-    - gloo mesh GME_TARGET_REVISION
-    - istio ISTIO_TARGET_REVISION-solo (Helm)
-    - revision: ISTIO_TAG_REVISION
+    - gloo mesh $GME_TARGET_REVISION
+    - istio $ISTIO_TARGET_REVISION-solo (Helm)
+    - revision: $ISTIO_TAG_REVISION
 - ilcm:
-    - gloo mesh GME_TARGET_REVISION
-    - istio ISTIO_TARGET_REVISION-solo (ILCM)
-    - revision: ISTIO_TAG_REVISION
+    - gloo mesh $GME_TARGET_REVISION
+    - istio $ISTIO_TARGET_REVISION-solo (ILCM)
+    - revision: $ISTIO_TAG_REVISION
 
 ## Application description
 
@@ -37,7 +37,7 @@ To access applications, follow the methods below:
 
 Discover your gateway IP address
 ```
-ISTIO_REVISION=ISTIO_TAG_REVISION
+ISTIO_REVISION=$ISTIO_TAG_REVISION
 GATEWAY_IP=$(kubectl -n istio-gateways get service istio-ingressgateway-${ISTIO_REVISION} -o jsonpath='{.status.loadBalancer.ingress[0].*}')
 
 echo ${GATEWAY_IP}
@@ -78,7 +78,7 @@ access gloo mesh ui at https://localhost:8090"
 
 To access Istio Ingress Gateway using port-forward command:
 ```
-ISTIO_REVISION=ISTIO_TAG_REVISION
+ISTIO_REVISION=$ISTIO_TAG_REVISION
 kubectl port-forward -n istio-gateways svc/istio-ingressgateway-${ISTIO_REVISION} 8443:443 --context <cluster_name>
 ```
 access the ingress gateway at https://localhost:8443

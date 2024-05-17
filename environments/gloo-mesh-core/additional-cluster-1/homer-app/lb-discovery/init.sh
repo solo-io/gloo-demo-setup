@@ -11,7 +11,7 @@ kind: Namespace
 metadata:
   name: homer-portal
   labels:
-    istio.io/rev: 1-20
+    istio.io/rev: $ISTIO_TAG_REVISION
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application

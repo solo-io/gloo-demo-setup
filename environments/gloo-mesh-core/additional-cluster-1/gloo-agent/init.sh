@@ -98,6 +98,7 @@ spec:
         common:
             adminNamespace: "gloo-mesh"
             cluster: ${cluster_context}
+            verbose: true
         global: {}
         glooAgent:
             enabled: true
@@ -148,6 +149,7 @@ spec:
         common:
             adminNamespace: "gloo-mesh"
             cluster: ${cluster_context}
+            verbose: true
         telemetryCollector:
             enabled: true
             config:

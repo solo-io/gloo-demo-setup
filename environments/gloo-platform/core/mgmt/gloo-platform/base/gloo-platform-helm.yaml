@@ -19,6 +19,7 @@ spec:
             addonNamespace: "gloo-mesh-addons"
             adminNamespace: "gloo-mesh"
             cluster: mgmt
+            verbose: true
         glooInsightsEngine:
             enabled: false
         global: {}
@@ -60,7 +61,7 @@ spec:
                             annotations:
                                 proxy.istio.io/config: '{ "holdApplicationUntilProxyStarts": true }'
                             labels:
-                                istio.io/rev: ISTIO_TAG_REVISION
+                                istio.io/rev: $ISTIO_TAG_REVISION
                                 sidecar.istio.io/inject: "true"
             enabled: true
             serviceType: ClusterIP
@@ -87,8 +88,8 @@ spec:
             enabled: true
             image:
               pullPolicy: IfNotPresent
-              repository: DOCKER_REPO/gloo-otel-collector
-              tag: GME_TARGET_REVISION
+              repository: $DOCKER_REPO/gloo-otel-collector
+              tag: $GME_TARGET_REVISION
         telemetryGatewayCustomization:
             disableCertGeneration: true
         telemetryCollector:
@@ -99,13 +100,13 @@ spec:
             #service: 
             #    type: ClusterIP
             #podLabels:
-            #    istio.io/rev: ISTIO_TAG_REVISION
+            #    istio.io/rev: $ISTIO_TAG_REVISION
             #podAnnotations:
             #    proxy.istio.io/config: '{ "holdApplicationUntilProxyStarts": true }'
             image:
               pullPolicy: IfNotPresent
-              repository: DOCKER_REPO/gloo-otel-collector
-              tag: GME_TARGET_REVISION
+              repository: $DOCKER_REPO/gloo-otel-collector
+              tag: $GME_TARGET_REVISION
             config:
                 exporters:
                     otlp:
@@ -126,8 +127,8 @@ spec:
                       type: DirectoryOrCreate
                   name: cilium-run
         
-    repoURL: HELM_REPO
-    targetRevision: GME_TARGET_REVISION
+    repoURL: $HELM_REPO
+    targetRevision: $GME_TARGET_REVISION
   syncPolicy:
     automated:
       prune: true

@@ -15,7 +15,7 @@ spec:
   source:
     chart: base
     repoURL: https://istio-release.storage.googleapis.com/charts
-    targetRevision: ISTIO_TARGET_REVISION
+    targetRevision: $ISTIO_TARGET_REVISION
   syncPolicy:
     automated:
       prune: true

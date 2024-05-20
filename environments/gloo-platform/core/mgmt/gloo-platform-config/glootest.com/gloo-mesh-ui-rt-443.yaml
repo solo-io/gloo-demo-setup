@@ -27,6 +27,10 @@ spec:
     - uri:
         prefix: /workspace
     - uri:
+        prefix: /resources
+    - uri:
+        exact: /favicon.svg
+    - uri:
         exact: /favicon.ico
     - uri:
         exact: /manifest.json

@@ -10,8 +10,8 @@ spec:
   project: default
   source:
     chart: gloo-platform-crds
-    repoURL: HELM_REPO
-    targetRevision: GME_TARGET_REVISION
+    repoURL: $HELM_REPO
+    targetRevision: $GME_TARGET_REVISION
   syncPolicy:
     automated:
       prune: true

@@ -16,7 +16,7 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test-productpage-traffic
+  name: generate-traffic
   namespace: ${NAMESPACE}
   labels:
     app: gloo-mesh-traffic
@@ -30,8 +30,8 @@ spec:
         app: gloo-mesh-traffic
     spec:
       containers:
-        # Constant load on productpage
-        - name: test-productpage-traffic
+        # Generate traffic on URL
+        - name: generate-traffic
           image: curlimages/curl
           command:
             - /bin/sh

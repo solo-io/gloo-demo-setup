@@ -3,9 +3,9 @@
 # wait for completion of bookinfo install
 $SCRIPT_DIR/tools/wait-for-rollout.sh deployment productpage-v1 bookinfo-frontends 10 ${cluster_context}
 
-LOADBALANCER_IP=$(kubectl -n istio-gateways get svc istio-ingressgateway-${ISTIO_TAG_REVISION} -o jsonpath='{.status.loadBalancer.ingress[0].*}')
+LOADBALANCER_IP=$(kubectl --context ${cluster_context} get svc -n istio-gateways --selector=istio=ingressgateway -o jsonpath='{.items[*].status.loadBalancer.ingress[0].*}')
 NAMESPACE=bookinfo-front-ends
-URL=https://${LOADBALANCER_IP}:443/productpage
+URL=https://${LOADBALANCER_IP}/productpage
 
 kubectl apply --context=$cluster_context -f - <<EOF
 apiVersion: v1

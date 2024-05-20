@@ -20,3 +20,8 @@ $SCRIPT_DIR/tools/wait-for-rollout.sh deployment ext-auth-service gloo-mesh-addo
 $SCRIPT_DIR/tools/wait-for-rollout.sh deployment rate-limiter gloo-mesh-addons 10 ${cluster_context}
 $SCRIPT_DIR/tools/wait-for-rollout.sh deployment redis gloo-mesh-addons 10 ${cluster_context}
 
+# Print the Gloo Platform UI URL
+echo
+echo "If using LoadBalancer External-IP:"
+echo "access the Gloo UI at https://$(kubectl --context ${cluster_context} get svc -n istio-gateways --selector=istio=ingressgateway -o jsonpath='{.items[*].status.loadBalancer.ingress[0].*}')/gmui"
+echo

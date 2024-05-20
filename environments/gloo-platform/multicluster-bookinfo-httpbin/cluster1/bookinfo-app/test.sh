@@ -39,7 +39,8 @@ spec:
             - |
               while :
               do
-                curl -k ${URL}
+                echo "$URL"
+                curl -k -I ${URL}
                 sleep 30
               done
           resources:

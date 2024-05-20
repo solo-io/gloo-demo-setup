@@ -42,4 +42,8 @@ spec:
                 curl -k ${URL}
                 sleep 30
               done
+          resources:
+            requests:
+              cpu: 20m
+              memory: 25Mi
 EOF

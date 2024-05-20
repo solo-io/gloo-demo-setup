@@ -4,7 +4,7 @@
 $SCRIPT_DIR/tools/wait-for-rollout.sh deployment productpage-v1 bookinfo-frontends 10 ${cluster_context}
 
 LOADBALANCER_IP=$(kubectl --context ${cluster_context} get svc -n istio-gateways --selector=istio=ingressgateway -o jsonpath='{.items[*].status.loadBalancer.ingress[0].*}')
-NAMESPACE=bookinfo-front-ends
+NAMESPACE=bookinfo-frontends
 URL=https://${LOADBALANCER_IP}/productpage
 
 kubectl apply --context=$cluster_context -f - <<EOF

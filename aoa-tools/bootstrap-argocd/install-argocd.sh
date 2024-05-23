@@ -8,6 +8,8 @@ echo "Beginning installation on context ${CONTEXT}...."
 # Create argocd namespace
 kubectl --context "${CONTEXT}" create namespace argocd
 
+kubectl --context "${CONTEXT}" -n argocd create secret generic argocd-redis --from-literal=auth='admin@solo.io'
+
 # Deploy argocd silently
 until kubectl --context "${CONTEXT}" apply -k "${INSTALL_TYPE}/" > /dev/null 2>&1; do
   echo "Installing argocd. Please wait..."

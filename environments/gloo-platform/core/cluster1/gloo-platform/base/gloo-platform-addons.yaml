@@ -29,8 +29,8 @@ spec:
             rateLimiter:
                 image:
                     registry: gcr.io/gloo-mesh
-    repoURL: $HELM_REPO
-    targetRevision: $GME_TARGET_REVISION
+    repoURL: https://storage.googleapis.com/gloo-platform/helm-charts
+    targetRevision: 2.4.15
   syncPolicy:
     automated:
       prune: true

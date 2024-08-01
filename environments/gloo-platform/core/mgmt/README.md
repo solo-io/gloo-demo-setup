@@ -18,13 +18,13 @@ When applied with `cluster1` and `cluster2` environments, here is a high level d
 
 ## Environment description
 - base:
-    - gloo mesh $GME_TARGET_REVISION
-    - istio $ISTIO_TARGET_REVISION-solo (Helm)
-    - revision: $ISTIO_TAG_REVISION
+    - gloo mesh 2.4.16
+    - istio 1.14.6-solo (Helm)
+    - revision: 1-14
 - ilcm:
-    - gloo mesh $GME_TARGET_REVISION
-    - istio $ISTIO_TARGET_REVISION-solo (ILCM)
-    - revision: $ISTIO_TAG_REVISION
+    - gloo mesh 2.4.16
+    - istio 1.14.6-solo (ILCM)
+    - revision: 1-14
 
 ## Application description
 
@@ -45,7 +45,7 @@ To access applications, follow the methods below:
 
 Discover your gateway IP address
 ```
-ISTIO_REVISION=$ISTIO_TAG_REVISION
+ISTIO_REVISION=1-14
 GATEWAY_IP=$(kubectl -n istio-gateways get service istio-ingressgateway-${ISTIO_REVISION} -o jsonpath='{.status.loadBalancer.ingress[0].*}')
 
 echo ${GATEWAY_IP}
@@ -86,7 +86,7 @@ access gloo mesh ui at https://localhost:8090"
 
 To access Istio Ingress Gateway using port-forward command:
 ```
-ISTIO_REVISION=$ISTIO_TAG_REVISION
+ISTIO_REVISION=1-14
 kubectl port-forward -n istio-gateways svc/istio-ingressgateway-${ISTIO_REVISION} 8443:443 --context <cluster_name>
 ```
 access the ingress gateway at https://localhost:8443

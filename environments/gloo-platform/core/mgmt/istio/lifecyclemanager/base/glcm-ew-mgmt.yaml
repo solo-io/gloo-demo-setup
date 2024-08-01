@@ -7,8 +7,8 @@ metadata:
     argocd.argoproj.io/sync-wave: "-7"
 spec:
   installations:
-      # The revision for this installation, such as $ISTIO_TAG_REVISION
-    - gatewayRevision: $ISTIO_TAG_REVISION
+      # The revision for this installation, such as 1-14
+    - gatewayRevision: 1-14
       # List all workload clusters to install Istio into
       clusters:
       - name: mgmt
@@ -19,9 +19,9 @@ spec:
         profile: empty
         # Solo.io Istio distribution repository; required for Gloo Istio.
         # You get the repo key from your Solo Account Representative.
-        hub: us-docker.pkg.dev/gloo-mesh/$ISTIO_HUB
+        hub: us-docker.pkg.dev/gloo-mesh/istio-dd73a086ac13
         # The Solo.io Gloo Istio tag
-        tag: $ISTIO_TARGET_REVISION-solo
+        tag: 1.14.6-solo
         values:
           gateways:
             istio-ingressgateway:

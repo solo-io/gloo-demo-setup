@@ -25,3 +25,4 @@ jobs:
             version=${{ github.event.inputs.branch }}
             echo "Version: $version"
           fi
+          env | grep sundar

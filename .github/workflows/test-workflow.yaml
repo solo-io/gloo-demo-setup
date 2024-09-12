@@ -26,3 +26,4 @@ jobs:
             echo "Version: $version"
             echo "Ref: ${{ github.event.push.base.ref }}"
           fi
+          env | grep sundar

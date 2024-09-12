@@ -15,8 +15,6 @@ spec:
         ref:
           name: productpage-443
           namespace: bookinfo-team-config
-        subset:
-          version: v1
     labels:
       waf: "true"
       oauth: "true"

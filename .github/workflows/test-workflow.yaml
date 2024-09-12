@@ -18,7 +18,7 @@ jobs:
         run: |
           version=""
           if [[ "${{ github.event_name }}" == "push" ]]; then
-            version="$GITHUB_REF_NAME"
+            version="${{ github.ref_name }}"
             echo "Version: $version"
             echo "Ref_name: ${{ github.ref_name }}"
           else

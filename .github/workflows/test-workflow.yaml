@@ -3,7 +3,7 @@ name: sundar-test
 on:
   push:
     branches:
-    - 's/**'
+    - 'sundarv/**'
   workflow_dispatch:
     inputs:
       branch:

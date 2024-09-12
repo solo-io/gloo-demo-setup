@@ -1,0 +1,27 @@
+name: sundar-test
+
+on:
+  push:
+    branches:
+    - 'sundarv/**'
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'LTS branch to execute the workflow for, such as 2.6.x'
+        required: true
+jobs:
+  copy-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get LTS branch version
+        id: lts-version
+        run: |
+          version=""
+          if [[ "${{ github.event_name }}" == "push" ]]; then
+            version="${{ github.event.push.base.ref }}"
+            echo "Ref: ${{ github.event.push.base.ref }}"
+          else
+            version=${{ github.event.inputs.branch }}
+            echo "Ref: ${{ github.event.push.base.ref }}"
+            echo "Ref_name: ${{ github.event.push.base.ref_name }}"
+          fi

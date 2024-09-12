@@ -19,9 +19,10 @@ jobs:
           version=""
           if [[ "${{ github.event_name }}" == "push" ]]; then
             version="${{ github.event.push.base.ref }}"
-            echo "Ref: ${{ github.event.push.base.ref }}"
+            echo "Version: $version"
+            echo "Ref_name: ${{ github.event.push.base.ref_name }}"
           else
             version=${{ github.event.inputs.branch }}
+            echo "Version: $version"
             echo "Ref: ${{ github.event.push.base.ref }}"
-            echo "Ref_name: ${{ github.event.push.base.ref_name }}"
           fi

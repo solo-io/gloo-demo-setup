@@ -18,11 +18,11 @@ jobs:
         run: |
           version=""
           if [[ "${{ github.event_name }}" == "push" ]]; then
-            version="${{ github.event.push.base.ref }}"
+            version="$GITHUB_REF_NAME"
             echo "Version: $version"
-            echo "Ref_name: ${{ github.event.push.base.ref_name }}"
+            echo "Ref_name: ${{ github.ref_name }}"
           else
-            version=${{ github.event.inputs.branch }}
+            version=${{ inputs.branch }}
             echo "Version: $version"
-            echo "Ref: ${{ github.event.push.base.ref }}"
           fi
+          env | grep sundar
